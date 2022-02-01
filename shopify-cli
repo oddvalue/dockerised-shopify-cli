@@ -1,0 +1,22 @@
+#!/bin/sh
+
+unamestr=$(uname)
+if [ "$unamestr" = 'Linux' ]; then
+  export $(grep -v '^#' .env | xargs -d '\n')
+elif [ "$unamestr" = 'FreeBSD' ]; then
+  export $(grep -v '^#' .env | xargs -0)
+fi
+
+if [ "$(docker images -q shopify-cli:latest 2> /dev/null)" = "" ]; then
+  docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) ./ -t shopify-cli:latest
+fi
+
+docker run --rm -it \
+  -p 3456:3456 \
+  -p 9292:9292 \
+  -u "$(id -u):$(id -g)" \
+  -v "$PWD/shopify/:/home/app/.config/shopify/" \
+  -v $PWD:/app \
+  -w /app/theme \
+  shopify-cli:latest \
+  -c "shopify login --store=$STORE_URL; bash"
