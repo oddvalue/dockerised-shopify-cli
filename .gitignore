@@ -1,3 +1,4 @@
 theme/*
 .env
-shopify/logs/*
+!shopify/config.example
+shopify/*

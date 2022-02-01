@@ -5,6 +5,8 @@ if [ "$unamestr" = 'Linux' ]; then
   export $(grep -v '^#' .env | xargs -d '\n')
 elif [ "$unamestr" = 'FreeBSD' ]; then
   export $(grep -v '^#' .env | xargs -0)
+elif [ "$unamestr" = 'Darwin' ]; then
+  source .env
 fi
 
 if [ "$(docker images -q shopify-cli:latest 2> /dev/null)" = "" ]; then
