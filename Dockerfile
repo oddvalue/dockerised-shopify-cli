@@ -35,5 +35,6 @@ ENV PORT 3000
 
 EXPOSE $PORT
 EXPOSE 3456
+EXPOSE 9292
 
 ENTRYPOINT ["/bin/bash", "-l", "-c"]

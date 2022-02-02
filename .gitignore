@@ -1,4 +1,4 @@
 theme/*
 .env
-!shopify/config.example
-shopify/*
+home/.config/shopify
+home/.cache
