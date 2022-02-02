@@ -2,3 +2,4 @@ theme/*
 .env
 home/.config/shopify
 home/.cache
+home/.bash_history
