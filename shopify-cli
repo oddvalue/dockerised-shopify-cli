@@ -35,6 +35,7 @@ docker run --rm -it \
   -u "$(id -u):$(id -g)" \
   -v "$PWD/home/:/home/app/" \
   -v $PWD:/app \
+  -v ~/.ssh:/home/app/.ssh \
   -w /app/theme \
   shopify-cli:latest \
   -c "shopify login --store=$STORE_URL; bash"
