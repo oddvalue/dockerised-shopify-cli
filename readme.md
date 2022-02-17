@@ -27,6 +27,25 @@ The script automatically adds an env file to your project directory. The env fil
 
 * `STORE_URL` - The URL of the store you want to connect to
 
+### Serving
+
+When serving your theme set the host to `0.0.0.0`
+
+i.e.
+
+```bash
+shopify theme serve --host 0.0.0.0
+```
+
+Then access via `localhost:9292` on the host machine.
+
+### Aliases
+
+* **sti:** `shopify theme init`
+* **stp:** `shopify theme pull`
+* **stps:** `shopify theme push`
+* **sts:** `shopify theme serve --host 0.0.0.0`
+* **stc:** `shopify theme check`
 
 ## Shopify CLI Docs
 
