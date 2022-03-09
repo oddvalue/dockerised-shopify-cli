@@ -7,7 +7,7 @@ alias grep='grep --color=auto'
 alias sti='shopify theme init'
 alias stp='shopify theme pull'
 alias stps='shopify theme push'
-alias sts='shopify theme serve'
+alias sts='shopify theme serve --host 0.0.0.0'
 alias stc='shopify theme check'
 
 # Git status in prompt, thanks to https://coderwall.com/p/pn8f0g/show-your-git-status-and-branch-in-color-at-the-command-prompt
